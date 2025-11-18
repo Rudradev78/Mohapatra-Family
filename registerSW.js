@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Mohapatra-Family/sw.js', { scope: '/Mohapatra-Family/' })})}
