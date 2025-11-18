@@ -1,44 +1,48 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
 
+  // Helper to handle HashRouter navigation
+  const goTo = (path) => {
+    navigate(`#${path}`);
+  };
+
   return (
-    <div className='w-full h-275 bg-rose-200'>
-      
-      <div className='flex justify-center items-center p-3 bg-indigo-700'>
-        <h2 className='font-bold text-3xl text-white'>Mohapatra Family Web</h2>
+    <div className="w-full min-h-screen bg-rose-200">
+      {/* Header */}
+      <div className="flex justify-center items-center p-3 bg-indigo-700">
+        <h2 className="font-bold text-3xl text-white">Mohapatra Family Web</h2>
       </div>
 
-      <div className='flex flex-col items-center gap-1 mt-5'>
-        
+      {/* Buttons */}
+      <div className="flex flex-col items-center gap-4 mt-10">
+        {/* Chat Button */}
         <button
-          onClick={() => navigate("/chat")}
-          className=' w-[90%] h-15 text-2xl rounded-2xl bg-indigo-700 text-white'
+          onClick={() => goTo('/chat')}
+          className="w-[90%] h-15 text-2xl rounded-2xl bg-indigo-700 text-white"
         >
           Start Chat
         </button>
 
-        <div className='flex items-center gap-2 mt-2  w-[90%]'>
-
+        {/* Meeting Buttons */}
+        <div className="flex items-center gap-4 w-[90%]">
           <button
-            onClick={() => navigate("/meet?mode=join")}
-            className=' w-[50%] h-15 text-2xl font-bold rounded-2xl border-5 border-indigo-700 text-indigo-700'
+            onClick={() => goTo('/meet?mode=join')}
+            className="w-[50%] h-15 text-2xl font-bold rounded-2xl border-2 border-indigo-700 text-indigo-700"
           >
             Join Meeting
           </button>
 
           <button
-            onClick={() => navigate("/meet?mode=start")}
-            className=' w-[50%] h-15 text-2xl rounded-2xl bg-indigo-700 text-white'
+            onClick={() => goTo('/meet?mode=start')}
+            className="w-[50%] h-15 text-2xl rounded-2xl bg-indigo-700 text-white"
           >
             Start Meeting
           </button>
-
         </div>
       </div>
-
     </div>
   );
 };

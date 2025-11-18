@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Rudradev78/Mohapatra-Family.git",
+  "homepage": "https://Rudradev78.github.io/Mohapatra-Family",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
